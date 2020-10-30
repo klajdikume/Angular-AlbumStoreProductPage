@@ -6,12 +6,12 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ProductService {
 
-  _albumUrl = '../asstes/album.json';
+  private _albumUrl = '../asstes/album.json';
 
   constructor(private _http: Http) { }
 
   getAlbum(id: number) {
-    return this._http.get(this._albumUrl).map((res) => res.json);
+    return this._http.get(this._albumUrl).map((res) => res.json());
   }
 
 }
